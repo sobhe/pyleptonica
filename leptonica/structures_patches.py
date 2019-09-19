@@ -25,8 +25,8 @@
         Subject to grow with time
 """
 
-import leptonica_structures as structures
-from leptonica_functions import functions, pix3
+import leptonica.leptonica_structures as structures
+from .leptonica_functions import functions, pix3
 import ctypes
 
 def _getitem(getter, obj, index):

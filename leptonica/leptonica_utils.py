@@ -21,7 +21,7 @@ This file puts some utility functions, mostly for converting from
 and to leptonica used types
 """
 
-import leptonica_functions as lep
+import leptonica.leptonica_functions as lep
 import ctypes
 import struct
 

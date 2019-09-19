@@ -2,8 +2,19 @@
 #coding: utf-8
 
 import ctypes
-from leptonica_structures import *
-import leptonica_structures as structs
+from .leptonica_structures import *
+#import .leptonica_structures as structs
+
+
+# hide warnings
+import os
+
+try:
+    import StringIO
+except ImportError:
+    from io import StringIO
+os.stderr = StringIO()
+
 
 try:
     leptonica = ctypes.cdll.LoadLibrary("liblept.so")
@@ -21,7 +32,7 @@ free = libc.free
 def _convert_params(*args):
     new_args = []
     for arg in args:
-        if isinstance(arg, structs.LeptonObject):
+        if isinstance(arg, LeptonObject):
             arg = arg._address_
         new_args.append(arg)
     return tuple(new_args)

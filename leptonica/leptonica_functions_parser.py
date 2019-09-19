@@ -128,7 +128,7 @@ def parse_prototype(prototype_text):
             break
         try:
             data_type, name = token.rsplit(None,1)
-        except Exception, error:
+        except Exception as error:
             sys.stderr.write("Unexpected preample/function declaration."
                 + " Parsing error:\n\n%s\n" % prototype_text)
             raise
